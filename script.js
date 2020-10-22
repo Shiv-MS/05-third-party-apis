@@ -7,7 +7,7 @@ $(document).ready(() => {
     // for(where I start; where I end; how to get there )
     let current_hour = new Date
     current_hour.getHours()
-    for (let i = 8; i <= 17; i++) {
+    for (let i = 9; i <= 17; i++) {
         $(".container").append(`<div class="row time-block" id="${i <= 12 ? `${i}AM` : `${i - 12}PM`}">
         <div class="col-lg-1 hour ${i < current_hour.getHours() ? "past" : "future"}">${i <= 12 ? `${i}AM` : `${i - 12}PM`}</div>
         <textarea class="col-lg-10 description ${i < current_hour.getHours() ? "past" : "future"}"></textarea>
@@ -22,7 +22,6 @@ $(document).ready(() => {
         localStorage.setItem(aptHour, aptInfo);
     });
 
-    $("#8AM .description").val(localStorage.getItem("8AM"));
     $("#9AM .description").val(localStorage.getItem("9AM"));
     $("#10AM .description").val(localStorage.getItem("10AM"));
     $("#11AM .description").val(localStorage.getItem("11AM"));
